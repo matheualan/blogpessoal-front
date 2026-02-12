@@ -1,1 +1,2 @@
-@import "tailwindcss";
+/* a importacao vem aqui pq eh ele que o main.tsx esta chamando no import */
+@import "tailwindcss"; 
