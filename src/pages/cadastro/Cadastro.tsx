@@ -1,28 +1,69 @@
+import { useState, type ChangeEvent } from "react";
+import type { Usuario } from "../../models/Usuario";
+import { cadastrarUsuario } from "../../services/Service";
 
 function Cadastro() {
+
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: 0,
+        nome: '',
+        email: '',
+        senha: '',
+        foto: ''
+    });
+
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+        setUsuario({ ...usuario, [e.target.name]: e.target.value })
+    }
+
+    async function cadastrarNovoUsuario(event: ChangeEvent<HTMLFormElement>) {
+        event.preventDefault(); //para nao att a page e nao colocar os dados na url do navegador
+        try {
+            await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
+            alert('Funcionou cadastrar')
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+
                 <div className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
                     w-full min-h-screen bg-cover bg-center"
-                ></div>
-                <form className='flex justify-center items-center flex-col w-2/3 gap-3' >
+                >
+                </div>
+
+                <form onSubmit={cadastrarNovoUsuario} className='flex justify-center items-center flex-col w-2/3 gap-3' >
                     <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+
                     <div className="flex flex-col w-full">
                         <label htmlFor="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" placeholder="Nome" className="border-2 border-slate-700 rounded p-2" />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuario</label>
                         <input
                             type="text"
-                            id="usuario"
-                            name="usuario"
-                            placeholder="Usuario"
+                            id="nome"
+                            name="nome"
+                            placeholder="Nome"
+                            className="border-2 border-slate-700 rounded p-2"
+                            value={usuario.nome}
+                        // onChange={}
+                        />
+                    </div>
+
+                    <div className="flex flex-col w-full">
+                        <label htmlFor="email" //verificar se aq vai ser email ou usuario
+                        > Usuario
+                        </label>
+                        <input
+                            type="text"
+                            id="email" //verificar se aq vai ser email ou usuario
+                            name="email" //verificar se aq vai ser email ou usuario
+                            placeholder="Email" //verificar se aq vai ser email ou usuario
                             className="border-2 border-slate-700 rounded p-2"
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
                         <label htmlFor="foto">Foto</label>
                         <input
@@ -33,6 +74,7 @@ function Cadastro() {
                             className="border-2 border-slate-700 rounded p-2"
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
                         <label htmlFor="senha">Senha</label>
                         <input
@@ -43,6 +85,7 @@ function Cadastro() {
                             className="border-2 border-slate-700 rounded p-2"
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
                         <label htmlFor="confirmarSenha">Confirmar Senha</label>
                         <input
@@ -53,6 +96,7 @@ function Cadastro() {
                             className="border-2 border-slate-700 rounded p-2"
                         />
                     </div>
+
                     <div className="flex justify-around w-full gap-8">
                         <button
                             type='reset'
@@ -69,8 +113,9 @@ function Cadastro() {
                             Cadastrar
                         </button>
                     </div>
-                </form>
-            </div>
+
+                </form >
+            </div >
         </>
     );
 
