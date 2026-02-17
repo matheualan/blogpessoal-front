@@ -9,7 +9,7 @@ function Cadastro() {
         nome: '',
         email: '',
         senha: '',
-        foto: ''
+        foto: '',
     });
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
