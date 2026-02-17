@@ -1,0 +1,16 @@
+// {
+//   "id": 3,
+//   "nome": "usuarioroot",
+//   "email": "usuarioroot@email.com",
+//   "senha": "$2b$10$iakrdbCce1w4Yi/qEKPGJ.b8QUtI9c8Yuxe.0MUCULEYDgrgqecce", (senha cadastrada: rootroot)
+//   "foto": "string",
+//   "postagens": [
+//     "string"
+//   ]
+// }
+
+// // JSON para usar no endpoint /usuarios/logar
+// {
+//   "usuario": "usuarioroot@email.com",
+//   "senha": "rootroot"
+// }
