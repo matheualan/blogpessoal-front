@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { useContext, useEffect, useState, type ChangeEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ClipLoader } from "react-spinners";
@@ -8,28 +8,28 @@ function Login() {
 
     const navigate = useNavigate();
 
-    const { usuario, handleLogin, isLoading } = useContext(AuthContext)
+    const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
     const [usuarioLogin, setUsuarioLogin] = useState<LoginUsuario>(
         {} as LoginUsuario
-    )
+    );
 
     useEffect(() => {
         if (usuario.token !== "") {
-            navigate('/home')
+            navigate('/home');
         }
-    }, [usuario])
+    }, [usuario]);
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin({
             ...usuarioLogin,
             [e.target.name]: e.target.value
-        })
+        });
     }
 
     function login(e: ChangeEvent<HTMLFormElement>) { //mudei de formevent para changeevent
-        e.preventDefault()
-        handleLogin(usuarioLogin)
+        e.preventDefault();
+        handleLogin(usuarioLogin);
     }
 
     return (
@@ -45,10 +45,10 @@ function Login() {
                         <input
                             type="text"
                             id="email"
-                            name="email"
+                            name="usuario"
                             placeholder="Email"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={usuarioLogin.email}
+                            value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>

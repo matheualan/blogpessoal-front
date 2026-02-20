@@ -2,7 +2,7 @@
 export interface LoginUsuario {
     id: number;
     nome: string;
-    email: string;
+    usuario: string;
     senha: string;
     foto: string;
     token: string;
