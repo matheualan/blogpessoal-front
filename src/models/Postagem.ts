@@ -7,5 +7,5 @@ export interface Postagem {
     texto: string;
     data: string;
     tema: Tema | null;
-    user: Usuario | null;
+    usuario: Usuario | null;
 }

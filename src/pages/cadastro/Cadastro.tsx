@@ -15,7 +15,7 @@ function Cadastro() {
     const [usuario, setUsuario] = useState<Usuario>({
         id: 0,
         nome: '',
-        email: '',
+        usuario: '',
         senha: '',
         foto: ''
     });
@@ -98,7 +98,7 @@ function Cadastro() {
                             name="email"
                             placeholder="Email"
                             className="border-2 border-slate-700 rounded p-2"
-                            value={usuario.email}
+                            value={usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
