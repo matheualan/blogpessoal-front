@@ -12,6 +12,7 @@ function CardTema({ tema }: CardTemaProps) {
             <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
                 Tema
             </header>
+            
             <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
 
             <div className="flex">
