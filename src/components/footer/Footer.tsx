@@ -7,7 +7,7 @@ function Footer() {
     return (
         <>
             <div className="flex justify-center bg-indigo-900 text-white">
-                <div className="container flex flex-col items-center py-4">
+                <div className="container flex flex-col items-center py-6">
                     <p className='text-xl font-bold'>
                         Blog Pessoal Matheus Alan | Copyright: {data}
                     </p>
@@ -29,5 +29,4 @@ function Footer() {
     )
 
 }
-
-export default Footer
+export default Footer;

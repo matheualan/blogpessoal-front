@@ -17,14 +17,17 @@ export const AuthContext = createContext({} as AuthContextProps);
 
 export function AuthProvider({ children }: AuthProviderProps) {
 
-    const [usuario, setUsuario] = useState<LoginUsuario>({
-        id: 0,
-        nome: "",
-        usuario: "",
-        senha: "",
-        foto: "",
-        token: ""
-    });
+    // const [usuario, setUsuario] = useState<LoginUsuario>({
+    //     id: 0,
+    //     nome: "",
+    //     usuario: "",
+    //     senha: "",
+    //     foto: "",
+    //     token: ""
+    // });
+
+//  {} as LoginUsuario faz o mesmo que o metodo de cima
+    const [usuario, setUsuario] = useState<LoginUsuario>({} as LoginUsuario);
 
     const [isLoading, setIsLoading] = useState(false);
 
