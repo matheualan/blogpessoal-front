@@ -25,10 +25,10 @@ function Footer() {
                             <a href="https://www.linkedin.com/in/matheualan" target="_blank">
                                 <LinkedinLogoIcon size={48} weight='bold' />
                             </a>
-                            <a href="https://www.instagram.com/seu_usuario" target="_blank">
+                            <a href="https://www.instagram.com/mths_apv" target="_blank">
                                 <InstagramLogoIcon size={48} weight='bold' />
                             </a>
-                            <a href="https://www.facebook.com/seu_usuario" target="_blank">
+                            <a href="https://www.facebook.com/matheusalanpv" target="_blank">
                                 <FacebookLogoIcon size={48} weight='bold' />
                             </a>
                         </div>

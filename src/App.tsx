@@ -13,11 +13,15 @@ import FormPostagem from './components/postagem/formpostagem/FormPostagem'
 import DeletarPostagem from './components/postagem/deletarpostagem/DeletarPostagem'
 import Perfil from './pages/perfil/Perfil'
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+
 function App() {
 
 	return (
 		<>
 			<AuthProvider>
+				<ToastContainer />
 				{/* Provê o contexto de navegação e sincroniza a UI com a URL do navegador. */}
 				<BrowserRouter>
 					{/* Navbar e Footer são renderizados em todas as rotas */}
